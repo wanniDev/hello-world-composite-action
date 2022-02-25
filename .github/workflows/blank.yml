@@ -1,0 +1,14 @@
+name: deploy to stage server
+
+on:
+  pull_request:
+    types: [closed]
+    branches: [release/**]
+jobs:
+  test:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: trigger when PR merged.
+        run: echo "helloworld"
