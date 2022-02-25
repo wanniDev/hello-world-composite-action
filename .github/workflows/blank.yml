@@ -2,8 +2,10 @@ name: deploy to stage server
 
 on:
   pull_request:
+    branches:
+      - 'release/**'
     types: [closed]
-    branches: [release/**]
+
 jobs:
   test:
     if: github.event.pull_request.merged == true
